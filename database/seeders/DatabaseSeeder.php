@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'mattot',
-            'email' => 'mattot@blazingbyte.co',
+            'email' => 'mattot@test.com',
         ]);
 
         Agent::factory(100)->create();

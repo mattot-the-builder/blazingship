@@ -43,7 +43,11 @@
                                         {{ $agent->phone_number_e164 }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $agent->address }}
                                     </td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $agent->role }}
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                                            {{ $agent->role }}
+                                        </span>
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">RM
                                         {{ $agent->earning }}

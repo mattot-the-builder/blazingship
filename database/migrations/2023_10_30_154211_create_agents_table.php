@@ -16,7 +16,7 @@ return new class () extends Migration {
             $table->string('phone_number_e164');
             $table->string('address');
             $table->string('registration_date');
-            $table->enum('role', ['agent', 'stokis', 'dropship'])->default('dropship');
+            $table->enum('role', ['agent', 'stockist', 'dropship'])->default('dropship');
             $table->unsignedInteger('total_sale')->default(0);
             $table->decimal('earning', 10, 2)->default(0.00);
             $table->string('payment_information');

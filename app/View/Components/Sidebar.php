@@ -26,7 +26,7 @@ class Sidebar extends Component
                 'label' => 'Dashboard',
             ],
             'agent' => [
-                'name' => 'agent',
+                'name' => 'agent.index',
                 'url' => '/agent',
                 'svg' => '
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -36,7 +36,7 @@ class Sidebar extends Component
                 'label' => 'Agent',
             ],
             'order' => [
-                'name' => 'agent',
+                'name' => 'order.index',
                 'url' => '/order',
                 'svg' => '
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -46,7 +46,7 @@ class Sidebar extends Component
                 'label' => 'Order',
             ],
             'category' => [
-                'name' => 'category',
+                'name' => 'category.index',
                 'url' => '/category',
                 'svg' => '
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -57,7 +57,7 @@ class Sidebar extends Component
                 'label' => 'Category',
             ],
             'product' => [
-                'name' => 'product',
+                'name' => 'product.index',
                 'url' => '/product',
                 'svg' => '<svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24"
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -67,7 +67,7 @@ class Sidebar extends Component
                 'label' => 'Product',
             ],
             'customer' => [
-                'name' => 'customer',
+                'name' => 'customer.index',
                 'url' => '/customer',
                 'svg' => '
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

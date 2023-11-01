@@ -21,7 +21,7 @@ class AgentFactory extends Factory
             'phone_number_e164' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
             'registration_date' => $this->faker->date(),
-            'role' => $this->faker->randomElement(['agent', 'stokis', 'dropship']),
+            'role' => $this->faker->randomElement(['agent', 'stockist', 'dropship']),
             'total_sale' => $this->faker->randomNumber(),
             'earning' => $this->faker->randomFloat(2, 10.00, 1000.00),
             'payment_information' => $this->faker->text(),

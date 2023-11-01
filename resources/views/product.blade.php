@@ -43,8 +43,11 @@
                                         {{ $product->name }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         {{ Illuminate\Support\Str::limit($product->description, 30) }}</td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">RM
-                                        {{ $product->category->name }}
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        <span
+                                            class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
+                                            {{ $product->category->name }}
+                                        </span>
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->sku }}
                                     </td>
