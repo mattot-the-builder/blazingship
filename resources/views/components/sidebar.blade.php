@@ -108,36 +108,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                                <ul role="list" class="-mx-2 mt-2 space-y-1">
-                                    <li>
-                                        <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
-                                        <a href="#"
-                                            class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">H</span>
-                                            <span class="truncate">Heroicons</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">T</span>
-                                            <span class="truncate">Tailwind Labs</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                            <span
-                                                class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">W</span>
-                                            <span class="truncate">Workcation</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="mt-auto">
                                 <a href="#"
                                     class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
@@ -183,38 +153,8 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li>
-                        <div class="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                        <ul role="list" class="-mx-2 mt-2 space-y-1">
-                            <li>
-                                <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
-                                <a href="#"
-                                    class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">H</span>
-                                    <span class="truncate">Heroicons</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">T</span>
-                                    <span class="truncate">Tailwind Labs</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold">
-                                    <span
-                                        class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">W</span>
-                                    <span class="truncate">Workcation</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="mt-auto">
-                        <a href="#"
+                        <a href="/setting"
                             class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white">
                             <svg class="h-6 w-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
@@ -302,7 +242,7 @@
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95">
                             <!-- Active: "bg-gray-50", Not Active: "" -->
-                            <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem"
+                            <a href="/setting" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem"
                                 tabindex="-1" id="user-menu-item-0">Your profile</a>
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf

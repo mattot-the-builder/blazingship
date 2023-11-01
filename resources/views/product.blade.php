@@ -1,10 +1,9 @@
-
 <x-app-layout>
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
-                <h1 class="text-base font-semibold leading-6 text-gray-900">Agents</h1>
-                <p class="mt-2 text-sm text-gray-700">A list of all the agents in your business.</p>
+                <h1 class="text-base font-semibold leading-6 text-gray-900">Products</h1>
+                <p class="mt-2 text-sm text-gray-700">List of all products.</p>
             </div>
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                 <button type="button"
@@ -22,32 +21,38 @@
                                     class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Name
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                    Phone Number</th>
+                                    Description</th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                    Address</th>
+                                    Category</th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                    Role</th>
+                                    SKU</th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                                    Earning</th>
+                                    Quantity</th>
+                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                    Price</th>
                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
                                     <span class="sr-only">Edit</span>
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
-                            @foreach ($agents as $agent)
+                            @foreach ($products as $product)
                                 <tr>
                                     <td
                                         class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                        {{ $agent->name }}</td>
+                                        {{ $product->name }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                        {{ $agent->phone_number_e164 }}</td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $agent->address }}
-                                    </td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $agent->role }}
-                                    </td>
+                                        {{ Illuminate\Support\Str::limit($product->description, 30) }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">RM
-                                        {{ $agent->earning }}
+                                        {{ $product->category->name }}
+                                    </td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->sku }}
+                                    </td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-center text-gray-500">
+                                        {{ $product->quantity }}
+                                    </td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        RM {{ $product->price }}
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span
@@ -61,7 +66,7 @@
 
                     </table>
 
-                    {{ $agents->links() }}
+                    {{ $products->links() }}
                 </div>
             </div>
         </div>
