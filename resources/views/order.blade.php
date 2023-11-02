@@ -1,4 +1,3 @@
-
 <x-app-layout>
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center">
@@ -19,7 +18,8 @@
                         <thead>
                             <tr>
                                 <th scope="col"
-                                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Product Name
+                                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">
+                                    Product Name
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                     Customer Name</th>
@@ -44,14 +44,16 @@
                                         {{ $order->product->name }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         {{ $order->customer->name }}</td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $order->shipping_address }}
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        {{ $order->shipping_address }}
                                     </td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $order->total }}
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">RM {{ $order->total }}
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         {{ $order->payment_status }}
                                     </td>
-                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $order->status }}
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                        <x-status-badge :status="$order->status" />
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span
