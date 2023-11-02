@@ -6,7 +6,7 @@
                 <p class="mt-2 text-sm text-gray-700">List of all products.</p>
             </div>
             <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                <a type="button" href="{{route('product.create')}}"
+                <a type="button" href="{{ route('product.create') }}"
                     class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add
                     product</a>
             </div>
@@ -39,8 +39,12 @@
                             @foreach ($products as $product)
                                 <tr>
                                     <td
-                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                                        {{ $product->name }}</td>
+                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0 flex gap-x-6 items-center">
+                                        <img class="h-32 w-auto rounded-lg"
+                                            src="{{$product->getMedia('product_photos')->first()->getUrl('preview')}}"
+                                            alt="image description">
+                                        {{ $product->name }}
+                                    </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                         {{ Illuminate\Support\Str::limit($product->description, 30) }}</td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">

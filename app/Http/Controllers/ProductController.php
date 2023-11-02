@@ -12,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::latest()->paginate(10);
         return view('product', compact('products'));
     }
 
@@ -39,6 +39,7 @@ class ProductController extends Controller
         ]);
 
         $product = Product::create($request->all());
+        $product->addMedia($request->file('photo'))->toMediaCollection('product_photos');
 
         if ($product->save()) {
             return redirect()->route('product.index')->with('success', 'Product created successfully');
