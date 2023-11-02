@@ -20,6 +20,7 @@ export default {
 
     plugins: [
         forms,
+        require("@tailwindcss/typography"),
         require("flowbite/plugin")({
             charts: true,
         }),

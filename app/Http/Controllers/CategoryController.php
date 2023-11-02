@@ -29,7 +29,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $category = new Category();
+        $category->fill($request->all());
+
+        if ($category->save()) {
+            return redirect()->back()->with('success', 'Category created successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Failed to create category.');
+        }
     }
 
     /**

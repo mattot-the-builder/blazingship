@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -29,7 +29,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'sku' => 'required',
+            'quantity' => 'required',
+            'price' => 'required',
+        ]);
+
+        $product = Product::create($request->all());
+
+        if ($product->save()) {
+            return redirect()->route('product.index')->with('success', 'Product created successfully');
+        } else {
+            return redirect()->route('product.index')->with('error', 'Product creation failed');
+        }
     }
 
     /**
@@ -37,7 +52,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('product.show', compact('product'));
     }
 
     /**
