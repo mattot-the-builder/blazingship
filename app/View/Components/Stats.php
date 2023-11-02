@@ -6,6 +6,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class Stats extends Component
@@ -21,6 +22,7 @@ class Stats extends Component
         'change' => 0,
     ];
     public $pending_order = 0;
+    public $top_agents;
     /**
      * Create a new component instance.
      */
@@ -41,6 +43,10 @@ class Stats extends Component
         $this->customers['change'] = $this->customers['new'] - $this->customers['old'];
 
         $this->pending_order = Order::where('status', 'pending')->get()->count();
+
+        $this->top_agents = DB::table('agents')->orderBy('total_sale', 'desc')->take(3)->get();
+
+
     }
 
     /**

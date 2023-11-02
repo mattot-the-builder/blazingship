@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Agent extends Model
 {
@@ -19,4 +20,8 @@ class Agent extends Model
         'earning',
         'payment_information',
     ];
+
+    public function orders(): HasMany {
+        return $this->hasMany(Order::class);
+    }
 }
