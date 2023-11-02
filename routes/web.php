@@ -4,6 +4,7 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/order-summary/{id?}', [PaymentController::class, 'summary'])->name('checkout.summary');
+Route::post('/checkout/{id?}', [PaymentController::class, 'checkout'])->name('checkout');
+Route::get('/payment-success', [PaymentController::class, 'success'])->name('payment-success');
+Route::get('/payment-cancel', [PaymentController::class, 'cancel'])->name('payment-cancel');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

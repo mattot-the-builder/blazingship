@@ -19,8 +19,10 @@ class OrderFactory extends Factory
         return [
             'product_id' => $this->faker->numberBetween(1, 10),
             'agent_id' => $this->faker->numberBetween(1, 10),
-            'customer_id' => $this->faker->numberBetween(1, 10),
-            'shipping_address' => $this->faker->address,
+            'address' => $this->faker->address,
+            'country' => $this->faker->country,
+            'state' => $this->faker->state,
+            'postcode' => $this->faker->postcode(),
             'quantity' => $this->faker->numberBetween(1, 10),
             'price' => $this->faker->numberBetween(1, 10),
             'total' => $this->faker->numberBetween(1, 10),

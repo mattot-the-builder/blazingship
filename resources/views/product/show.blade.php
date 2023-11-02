@@ -35,16 +35,16 @@
                             <h2 class="sr-only">Images</h2>
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-featured-product-shot.jpg"
+                                <img src="{{ $product->getMedia('product_photos')->first()->getUrl() }}"
                                     alt="Back of women&#039;s Basic Tee in black."
                                     class="lg:col-span-2 lg:row-span-2 rounded-lg">
 
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-01.jpg"
-                                    alt="Side profile of women&#039;s Basic Tee in black."
-                                    class="hidden lg:block rounded-lg">
-
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-product-shot-02.jpg"
-                                    alt="Front of women&#039;s Basic Tee in black." class="hidden lg:block rounded-lg">
+                                {{-- <img src="{{ $product->getMedia('product_photos')->first()->getUrl() }}" --}}
+                                {{--     alt="Side profile of women&#039;s Basic Tee in black." --}}
+                                {{--     class="hidden lg:block rounded-lg"> --}}
+                                {{-- --}}
+                                {{-- <img src="{{ $product->getMedia('product_photos')->first()->getUrl() }}" --}}
+                                {{--     alt="Front of women&#039;s Basic Tee in black." class="hidden lg:block rounded-lg"> --}}
                             </div>
                         </div>
 
@@ -173,9 +173,9 @@
                                     </fieldset>
                                 </div>
 
-                                <button type="submit"
+                                <a href="{{ route('checkout.summary', $product->id) }}"
                                     class="mt-8 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Buy
-                                    now</button>
+                                    now</a>
                             </form>
 
                             <!-- Product details -->
@@ -218,10 +218,12 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
-                                            <span class="mt-4 text-sm font-medium text-gray-900"> Various Payment Methods
+                                            <span class="mt-4 text-sm font-medium text-gray-900"> Various Payment
+                                                Methods
                                             </span>
                                         </dt>
-                                        <dd class="mt-1 text-sm text-gray-500">Pay at your fingertips on your comfy sofa!</dd>
+                                        <dd class="mt-1 text-sm text-gray-500">Pay at your fingertips on your comfy
+                                            sofa!</dd>
                                     </div>
                                 </dl>
                             </section>

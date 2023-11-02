@@ -14,8 +14,12 @@ return new class () extends Migration {
             $table->id();
             $table->foreignId('product_id')->constrained()->nullable();
             $table->foreignId('agent_id')->constrained()->nullable();
-            $table->foreignId('customer_id')->constrained()->nullable();
-            $table->string('shipping_address');
+            $table->string('phone_number');
+            $table->string('address');
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->string('postcode');
             $table->unsignedInteger('quantity')->default(0.00);
             $table->decimal('price', 10, 2)->default(0.00);
             $table->decimal('total', 10, 2)->default(0.00);
