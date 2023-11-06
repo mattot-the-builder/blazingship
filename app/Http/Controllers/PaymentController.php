@@ -14,7 +14,7 @@ class PaymentController extends Controller
 
         $product = Product::find($id);
 
-        $YOUR_DOMAIN = 'http://blazingship.test';
+        $YOUR_DOMAIN = env('APP_URL');
 
         $order = Order::create([
             'agent_id' => 1,
